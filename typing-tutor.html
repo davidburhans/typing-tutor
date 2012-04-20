@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title></title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/TypedChar.js" type="text/javascript"></script>
+    <script src="scripts/TypedCharFactory.js" type="text/javascript"></script>
+    <script src="scripts/TypingSession.js" type="text/javascript"></script>
+    <script src="scripts/SessionManager.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var valid = 'ckly';
+            var factory = new TypedCharFactory(valid);
+
+            var session = new TypingSession(factory, $('.prompt'), $('.input-prompt'));
+
+            var history = session.pastSessions();
+            var $history = $('.past-sessions');
+            $history.append($('<option />').val('').text('- Select a Session -').attr('selected', 'selected'));
+            $.each(history, function (idx, key) {
+                $history.append($('<option />').val(key).text(key));
+            });
+
+            $history.change(function () {
+                var key = $history.val();
+                if (key) {
+                    session = session.load(key);
+                    updateRate();
+                } else {
+                    $('.reset').click();
+                }
+            });
+
+            $('.start').click(function () {
+                session.start();
+                $(this).attr('disabled', 'disabled');
+                $('.reset').removeAttr('disabled');
+            });
+
+            $('.reset').click(function () {
+                session.reset();
+                $(this).attr('disabled', 'disabled');
+                $('.start').removeAttr('disabled');
+            }).attr('disabled', 'disabled');
+
+            $('.save').click(function () {
+                session.save();
+                $('.reset').click();
+            });
+
+            var updateRate = function () {
+                $('.rate').text(session.getRate());
+            };
+
+
+        });
+    </script>
+    <noscript>Your browser does not support JavaScript.</noscript>
+</head>
+<body>
+    <div class="prompt">
+    </div>
+    <div class="input">
+        <input type="text" class="input-prompt" />
+    </div>
+    <div>
+        <button class="start">
+            Start</button>
+        <button class="reset">
+            Reset</button>
+        <button class="save">
+            Save</button>
+        <select class='past-sessions'>
+        </select>
+    </div>
+    <div>
+        <span class="rate">0</span> wpm
+    </div>
+    <ul>
+        <li>Sessions
+            <ul>
+                <li>Create new </li>
+                <li>Choose characters for session </li>
+                <li>Display typing speed </li>
+                <li>Display error rate </li>
+                <li>Save sessions </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

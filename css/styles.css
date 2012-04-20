@@ -1,0 +1,12 @@
+.prompt
+{
+    border: solid 1px #000;
+}
+.input
+{
+    border: solid 1px #0F0;
+}
+.input input
+{
+    width: 100%;
+}

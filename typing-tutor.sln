@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "typing-tutor", ".", "{DDD79B8A-3710-4CCE-9AF5-768BE694EF71}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/typing-tutor"
+		Debug.AspNetCompiler.PhysicalPath = "E:\typing-tutor\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\typing-tutor\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/typing-tutor"
+		Release.AspNetCompiler.PhysicalPath = "E:\typing-tutor\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\typing-tutor\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1538"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDD79B8A-3710-4CCE-9AF5-768BE694EF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD79B8A-3710-4CCE-9AF5-768BE694EF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
